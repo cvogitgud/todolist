@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import Home from './Home';
 import AddList from './AddList';
 import ListDetails from './ListDetails';
+import NotFound from './NotFound';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route exact path="/" element={<Home />}></Route>
           <Route exact path="/add_list" element={<AddList />}></Route>
           <Route exact path="/lists/:id" element={<ListDetails />}></Route>
+          <Route exact path="*" element={<NotFound />}></Route>
         </Routes>
       </div>
     </Router>

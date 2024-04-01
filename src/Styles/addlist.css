@@ -1,0 +1,49 @@
+.add-list {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.add-list label {
+  text-align: left;
+  display: block;
+}
+
+.add-list h1 {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.add-list input,
+.add-list textarea {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+
+.add-list textarea {
+  height: 200px;
+}
+
+.add-button {
+  display: flex;
+  justify-content: start;
+}
+
+.add-button button {
+  background: rgb(104, 104, 174);
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+
+  transition: background-color 0.15s;
+}
+
+.add-button button:hover {
+  background-color: rgb(83, 127, 220);
+}

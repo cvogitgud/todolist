@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import useFetch from './useFetch';
 import TaskCollection from './TaskCollection.js';
 
@@ -19,14 +19,40 @@ const ListDetails = () => {
     errorTasks,
   } = useFetch(`http://localhost:8000/tasks`);
 
+  /* Delete list */
   const navigate = useNavigate();
 
-  const handleClick = () => {
+  const handleDelete = () => {
     fetch(`http://localhost:8000/lists/` + id, {
       method: 'DELETE',
     }).then(() => {
       navigate('/');
     });
+  };
+
+  /* Handle submission for adding task */
+  const [task, setTask] = useState(null);
+  const handleSubmit = (event) => {
+    if (task !== null) {
+      event.preventDefault();
+
+      const list = { name: task, list: id };
+
+      fetch(`http://localhost:8000/tasks`, {
+        method: 'POST',
+        headers: { 'Content-type': 'application/job' },
+        body: JSON.stringify(list),
+      }).then(() => {
+        console.log('new task added');
+      });
+
+      document.querySelector('.add-task-input').value = ``;
+      document.querySelector('.submit-task').classList.remove('adding-task');
+    }
+  };
+
+  const showAdd = () => {
+    document.querySelector('.submit-task').classList.add('adding-task');
   };
 
   return (
@@ -41,16 +67,37 @@ const ListDetails = () => {
             <p className="date-created">{list.date}</p>
           </div>
 
-          <input type="text" className="task-name" />
-
           {/* Task List Display */}
           {isPendingTasks && <div>Loading...</div>}
           {errorTasks && <div>{errorTasks}</div>}
           {tasks && <TaskCollection tasks={tasks} list={list}></TaskCollection>}
 
-          <button className="delete" onClick={handleClick}>
-            Delete list
-          </button>
+          {/* Input new task */}
+          <form onSubmit={handleSubmit} className="submit-task">
+            <label>New Task</label>
+            <input
+              type="text"
+              className="add-task-input"
+              onChange={(e) => {
+                setTask(e.target.value);
+              }}
+              placeholder="Add a new task"
+            />
+            <button className="add-task-button">Add task</button>
+          </form>
+
+          {/* Buttons */}
+          <div className="buttons">
+            <button
+              className="add-task-button"
+              onClick={showAdd}
+              style={{ marginRight: 5 }}>
+              Add a new task
+            </button>
+            <button className="delete" onClick={handleDelete}>
+              Delete list
+            </button>
+          </div>
         </div>
       )}
     </div>

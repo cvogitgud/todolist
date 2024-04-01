@@ -1,0 +1,74 @@
+/* List view */
+.list-details .title {
+  margin-bottom: 10px;
+}
+
+.list-details .info {
+  display: flex;
+  color: grey;
+}
+
+.info .date-created {
+  margin-left: auto;
+}
+
+.list-details .delete {
+  font-size: 13px;
+  background-color: rgb(227, 0, 0);
+  color: white;
+
+  border: none;
+  border-radius: 2px;
+
+  padding: 8px;
+  transition: opacity, 0.15s;
+
+  cursor: pointer;
+}
+
+.list-details .delete:hover {
+  opacity: 0.8;
+}
+
+.list-details .tasks {
+  margin-top: 10px;
+}
+
+.submit-task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.adding-task {
+}
+
+.buttons {
+  position: absolute;
+  bottom: 50px;
+}
+
+.add-task-input {
+  margin-left: 25px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  width: 500px;
+}
+
+.add-task-button {
+  font-size: 13px;
+  background-color: rgb(104, 104, 174);
+  color: white;
+
+  border: none;
+  border-radius: 2px;
+
+  margin-left: auto;
+  padding: 8px;
+
+  transition: opacity, 0.15s;
+
+  cursor: pointer;
+}

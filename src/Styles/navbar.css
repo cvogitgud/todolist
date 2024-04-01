@@ -1,0 +1,44 @@
+/* Navbar */
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 700px;
+  margin: 0 auto;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.navbar h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  background: rgb(104, 104, 174);
+
+  height: 50px;
+  width: auto;
+  border-radius: 3px;
+
+  padding: 0 10px;
+}
+
+.navbar .links {
+  margin-left: auto;
+}
+.navbar a {
+  color: rgb(104, 104, 174);
+  margin-right: 16px;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.navbar a:hover {
+  opacity: 0.8;
+}
+
+.navbar a:visited {
+  color: rgb(104, 104, 174);
+}
