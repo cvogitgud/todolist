@@ -5,6 +5,7 @@
 
 .list-details .info {
   display: flex;
+  align-items: center;
   color: grey;
 }
 
@@ -27,11 +28,7 @@
 }
 
 .list-details .delete:hover {
-  opacity: 0.8;
-}
-
-.list-details .tasks {
-  margin-top: 10px;
+  opacity: 0.85;
 }
 
 .submit-task {
@@ -71,4 +68,8 @@
   transition: opacity, 0.15s;
 
   cursor: pointer;
+}
+
+.add-task-button:hover {
+  opacity: 0.85;
 }

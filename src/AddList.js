@@ -1,18 +1,60 @@
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+
 const AddList = () => {
+  const [name, setName] = useState(null);
+  const [description, setDescription] = useState(null);
+
+  const dayjs = require('dayjs');
+  var localizedFormat = require('dayjs/plugin/localizedFormat');
+  dayjs.extend(localizedFormat);
+
+  const [date, setDate] = useState(dayjs().format('LLL'));
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (event) => {
+    const list = { name, description, date };
+    console.log(list);
+
+    if (list !== null) {
+      event.preventDefault();
+      fetch(`http://localhost:8000/lists`, {
+        method: `POST`,
+        headers: { 'Content-type': 'application/job' },
+        body: JSON.stringify(list),
+      }).then(() => {
+        console.log('new list added');
+        navigate('/');
+      });
+    }
+  };
+
   return (
     <div className="add-list">
       <h1>Add a new To-Do list</h1>
-      <form className="add-new-list-form">
+      <form className="add-new-list-form" onSubmit={handleSubmit}>
         <label>Title</label>
-        <input type="text" required className="new-list-name" />
+        <input
+          type="text"
+          required
+          className="new-list-name"
+          onChange={(e) => {
+            setName(e.target.value);
+          }}
+        />
 
         <label>Description</label>
-        <textarea required></textarea>
-      </form>
+        <textarea
+          required
+          onChange={(e) => {
+            setDescription(e.target.value);
+          }}></textarea>
 
-      <div className="add-button">
-        <button>Add list</button>
-      </div>
+        <div className="add-button">
+          <button>Add list</button>
+        </div>
+      </form>
     </div>
   );
 };

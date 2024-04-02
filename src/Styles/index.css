@@ -30,6 +30,11 @@ body {
   color: black;
 }
 
-.list-preview .description {
+.list-info {
   color: grey;
+  display: flex;
+}
+
+.list-info .date-created {
+  margin-left: auto;
 }

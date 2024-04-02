@@ -1,0 +1,29 @@
+.task-collection {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete-task {
+  font-size: 13px;
+  background-color: rgb(227, 0, 0);
+  color: white;
+
+  border: none;
+  border-radius: 2px;
+
+  height: 35px;
+
+  padding: 8px;
+  transition: opacity, 0.15s;
+
+  cursor: pointer;
+}
+
+.delete-task:hover {
+  opacity: 0.85;
+}

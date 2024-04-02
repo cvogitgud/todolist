@@ -13,6 +13,7 @@ const ListCollection = ({ lists, title }) => {
             </div>
             <div className="list-info">
               <p className="description">{list.description}</p>
+              <p className="date-created">Created {list.date}</p>
             </div>
           </Link>
         </div>

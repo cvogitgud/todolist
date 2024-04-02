@@ -15,34 +15,19 @@
   ],
   "tasks": [
     {
-      "name": "Wash dishes",
-      "list": "1",
-      "id": "10"
-    },
-    {
-      "name": "Do homework",
-      "list": "1",
-      "id": "11"
-    },
-    {
       "name": "Hangboard",
       "list": "2",
       "id": "20"
     },
     {
-      "id": "d6bc",
-      "name": "task",
-      "list": "1"
-    },
-    {
-      "id": "fec4",
-      "name": "new task",
-      "list": "1"
-    },
-    {
       "id": "2830",
       "name": "weighted pull ups",
       "list": "2"
+    },
+    {
+      "id": "ba47",
+      "name": "asdflkjl",
+      "list": "1"
     }
   ]
 }
