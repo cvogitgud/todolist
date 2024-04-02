@@ -2,10 +2,11 @@ import { Link } from 'react-router-dom';
 
 /* Component for Collection of Todo Objects */
 const ListCollection = ({ lists, title }) => {
+  // note: lists reversed (non-destructive) to display most recents first
   return (
     <div className="collection">
       <h1>{title}</h1>
-      {lists.map((list) => (
+      {lists.toReversed().map((list) => (
         <div className="list-preview" key={list.id}>
           <Link to={'/lists/' + list.id}>
             <div className="title">

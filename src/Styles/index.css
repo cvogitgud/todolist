@@ -35,6 +35,13 @@ body {
   display: flex;
 }
 
+.list-info .description {
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 450px;
+  text-overflow: ellipsis;
+}
+
 .list-info .date-created {
   margin-left: auto;
 }
