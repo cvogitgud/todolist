@@ -6,8 +6,9 @@ import './Styles/navbar.css';
 import './Styles/list_view.css';
 import './Styles/addlist.css';
 import './Styles/taskcollection.css';
+import './Styles/list_collection.css';
 
-import App from './App';
+import App from './Components/App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

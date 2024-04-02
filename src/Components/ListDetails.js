@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import useFetch from './useFetch';
+import { useState } from 'react';
+import useFetch from './useFetch.js';
 import TaskCollection from './TaskCollection.js';
 
 const ListDetails = () => {

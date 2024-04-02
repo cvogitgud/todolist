@@ -12,36 +12,3 @@ body {
   margin: 5px auto;
   padding: 10px;
 }
-
-.collection h1 {
-  margin: 20px auto;
-}
-
-.list-preview {
-  padding: 10px;
-}
-
-.list-preview:hover {
-  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
-}
-
-.list-preview a {
-  text-decoration: none;
-  color: black;
-}
-
-.list-info {
-  color: grey;
-  display: flex;
-}
-
-.list-info .description {
-  white-space: nowrap;
-  overflow: hidden;
-  max-width: 450px;
-  text-overflow: ellipsis;
-}
-
-.list-info .date-created {
-  margin-left: auto;
-}

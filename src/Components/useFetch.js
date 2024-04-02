@@ -33,7 +33,7 @@ function useFetch(url) {
       });
 
     return () => abortCont.abort();
-  }, [url]);
+  }, [url, data]);
 
   return { data, isPending, error };
 }

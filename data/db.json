@@ -21,11 +21,6 @@
   ],
   "tasks": [
     {
-      "name": "Hangboard",
-      "list": "2",
-      "id": "20"
-    },
-    {
       "id": "2830",
       "name": "weighted pull ups",
       "list": "2"
@@ -34,6 +29,16 @@
       "id": "ba47",
       "name": "asdflkjl",
       "list": "1"
+    },
+    {
+      "id": "256f",
+      "name": "wash dishes",
+      "list": "8b13"
+    },
+    {
+      "id": "ed46",
+      "name": "new task",
+      "list": "8b13"
     }
   ]
 }
