@@ -4,9 +4,9 @@ import { useState } from 'react';
 /* Component for Collection of Todo Objects */
 const ListCollection = ({ lists, title }) => {
   // note: lists reversed (non-destructive) to display most recents first
-  const [blogWanted, setBlogWanted] = useState(null);
+  const [blogWanted, setBlogWanted] = useState('');
 
-  const listsWanted = lists.filter(
+  let listsWanted = lists.filter(
     (list) => list.name.toLowerCase() === blogWanted.toLowerCase()
   );
 
@@ -18,13 +18,17 @@ const ListCollection = ({ lists, title }) => {
   return (
     <div className="collection">
       <h1>{title}</h1>
-      <input
-        type="text"
-        placeholder="Search"
-        onChange={(e) => {
-          setBlogWanted(e.target.value);
-        }}
-      />
+
+      <div className="blog-search">
+        <input
+          type="text"
+          placeholder="Search"
+          onChange={(e) => {
+            setBlogWanted(e.target.value);
+          }}
+        />
+      </div>
+
       {listsRecentsFirst.map((list) => (
         <div className="list-preview" key={list.id}>
           <Link to={'/lists/' + list.id}>
