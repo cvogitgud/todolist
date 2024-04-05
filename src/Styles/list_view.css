@@ -4,12 +4,13 @@
 }
 
 .list-details .info {
-  display: flex;
+  display: block;
   align-items: center;
   color: grey;
 }
 
 .info .date-created {
+  font-size: 13px;
   margin-left: auto;
 }
 
@@ -35,6 +36,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 20px;
   margin-bottom: 10px;
 }
 
@@ -42,8 +44,7 @@
 }
 
 .buttons {
-  position: absolute;
-  bottom: 50px;
+  margin-top: 30px;
 }
 
 .add-task-input {

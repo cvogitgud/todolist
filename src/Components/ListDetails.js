@@ -63,8 +63,8 @@ const ListDetails = () => {
         <div>
           <h1 className="title">{list.name}</h1>
           <div className="info">
-            <p className="description">{list.description}</p>
             <p className="date-created">Created {list.date}</p>
+            <p className="description">{list.description}</p>
           </div>
 
           {/* Task List Display */}
