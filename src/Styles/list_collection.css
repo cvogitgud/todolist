@@ -35,14 +35,14 @@
 .blog-search {
   margin: 15px auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  column-gap: 10px;
 }
 
 .blog-search input {
   border: solid;
   border-width: 1px;
-  border-color: grey;
+  border-color: lightgrey;
   border-radius: 15px;
 
   width: 350px;
