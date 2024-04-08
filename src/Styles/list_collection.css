@@ -34,6 +34,9 @@
 
 .blog-search {
   margin: 15px auto;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
 }
 
 .blog-search input {

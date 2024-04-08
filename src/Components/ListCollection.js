@@ -27,6 +27,7 @@ const ListCollection = ({ lists, title }) => {
             setBlogWanted(e.target.value);
           }}
         />
+        <input type="date" />
       </div>
 
       {listsRecentsFirst.map((list) => (
