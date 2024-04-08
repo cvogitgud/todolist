@@ -9,7 +9,7 @@ const AddList = () => {
   var localizedFormat = require('dayjs/plugin/localizedFormat');
   dayjs.extend(localizedFormat);
 
-  const [date, setDate] = useState(dayjs().format('lll'));
+  const [date, setDate] = useState(dayjs().format('ll'));
 
   const navigate = useNavigate();
 

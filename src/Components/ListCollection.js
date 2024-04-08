@@ -4,10 +4,21 @@ import { useState } from 'react';
 /* Component for Collection of Todo Objects */
 const ListCollection = ({ lists, title }) => {
   // note: lists reversed (non-destructive) to display most recents first
-  const [blogWanted, setBlogWanted] = useState('');
+  const [blogName, setBlogName] = useState('');
+
+  const dayjs = require('dayjs');
+  var localizedFormat = require('dayjs/plugin/localizedFormat');
+  dayjs.extend(localizedFormat);
+
+  var customParseFormat = require('dayjs/plugin/customParseFormat');
+  dayjs.extend(customParseFormat);
+
+  const [blogDate, setBlogDate] = useState(null);
 
   let listsWanted = lists.filter(
-    (list) => list.name.toLowerCase() === blogWanted.toLowerCase()
+    (list) =>
+      list.name.toLowerCase() === blogName.toLowerCase() ||
+      list.date === blogDate
   );
 
   let listsRecentsFirst = lists.toReversed();
@@ -24,11 +35,17 @@ const ListCollection = ({ lists, title }) => {
           type="text"
           placeholder="Search"
           onChange={(e) => {
-            setBlogWanted(e.target.value);
+            setBlogName(e.target.value);
           }}
           className="text-search"
         />
-        <input type="date" className="date-search" />
+        <input
+          type="date"
+          className="date-search"
+          onChange={(e) => {
+            setBlogDate(dayjs(e.target.value).format('ll'));
+          }}
+        />
       </div>
 
       {listsRecentsFirst.map((list) => (

@@ -3,32 +3,38 @@
     {
       "name": "My First To-Do List",
       "description": "Basic Chores",
-      "date": "1/1/2024",
+      "date": "Jan 1, 2024",
       "id": "1"
     },
     {
       "name": "Training",
       "description": "Climbing training for today",
-      "date": "3/27/2024",
+      "date": "Mar 27, 2024",
       "id": "2"
     },
     {
       "id": "8b13",
       "name": "new list",
       "description": "ahhhhhh",
-      "date": "Apr 2, 2024 1:39 PM"
+      "date": "Apr 2, 2024"
     },
     {
       "id": "eb47",
       "name": "Training",
       "description": "alt training",
-      "date": "Apr 5, 2024 2:18 PM"
+      "date": "Apr 5, 2024"
     },
     {
       "id": "442f",
       "name": "the complex one",
       "description": "Lorem ipsum dolor sit amet. Qui voluptatem voluptas qui harum doloribus sed alias numquam. Quo quaerat consequuntur vel atque aperiam qui voluptates quod sit dicta molestiae ut natus omnis. Quo aspernatur dolorum qui similique reprehenderit est maiores omnis. Quo aspernatur cumque aut incidunt libero sit quod placeat.\n\nSed voluptas voluptatem ad quia facere At adipisci harum ad eligendi perspiciatis a veniam eligendi a illo esse. Est natus esse in saepe vero aut doloremque vitae! Et repudiandae quas qui enim reprehenderit sit corporis quis ut nobis veniam id similique corrupti et officiis doloremque. Cum quas eligendi ea maxime aliquid ab enim voluptatem eos sapiente quod qui excepturi sunt ut iste laudantium.\n\nHic quia maiores sit cumque veniam ut quis consequatur et unde commodi. Id aliquam internos et dicta iusto qui galisum tempora id accusamus quia est internos minus ea repellendus ipsa. Et similique enim sed ipsa assumenda et quibusdam distinctio eos incidunt deserunt cum eius aspernatur eum aliquam consectetur in explicabo nisi.",
-      "date": "Apr 5, 2024 2:50 PM"
+      "date": "Apr 5, 2024"
+    },
+    {
+      "id": "b7d5",
+      "name": "date search test",
+      "description": "blah blah blah",
+      "date": "Apr 8, 2024"
     }
   ],
   "tasks": [
