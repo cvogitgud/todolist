@@ -26,8 +26,9 @@ const ListCollection = ({ lists, title }) => {
           onChange={(e) => {
             setBlogWanted(e.target.value);
           }}
+          className="text-search"
         />
-        <input type="date" />
+        <input type="date" className="date-search" />
       </div>
 
       {listsRecentsFirst.map((list) => (
