@@ -60,7 +60,7 @@ const ListCollection = ({ lists, title }) => {
         />
       </div>
 
-      {(
+      {(matchingList && (
         <div className="list-preview" key={matchingList.id}>
           <Link to={'/lists/' + matchingList.id}>
             <div className="title">
@@ -72,7 +72,7 @@ const ListCollection = ({ lists, title }) => {
             </div>
           </Link>
         </div>
-      ) ||
+      )) ||
         listsRecentsFirst.map((list) => (
           <div className="list-preview" key={list.id}>
             <Link to={'/lists/' + list.id}>
