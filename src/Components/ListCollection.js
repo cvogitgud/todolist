@@ -3,9 +3,6 @@ import { useState } from 'react';
 
 /* Component for Collection of Todo Objects */
 const ListCollection = ({ lists, title }) => {
-  // note: lists reversed (non-destructive) to display most recents first
-  const [blogName, setBlogName] = useState('');
-
   const dayjs = require('dayjs');
   var localizedFormat = require('dayjs/plugin/localizedFormat');
   dayjs.extend(localizedFormat);
@@ -13,17 +10,30 @@ const ListCollection = ({ lists, title }) => {
   var customParseFormat = require('dayjs/plugin/customParseFormat');
   dayjs.extend(customParseFormat);
 
-  const [blogDate, setBlogDate] = useState(null);
+  const [inputName, setInputName] = useState('');
+  const [inputDate, setInputDate] = useState(null);
+  let listsRecentsFirst = lists.toReversed(); // default: show all lists
 
-  let listsWanted = lists.filter(
+  // Find an exactly matching list, if possible
+  let matchingList = lists.find(
     (list) =>
-      list.name.toLowerCase() === blogName.toLowerCase() ||
-      list.date === blogDate
+      list.name.toLowerCase() === inputName.toLowerCase() &&
+      list.date === inputDate
   );
 
-  let listsRecentsFirst = lists.toReversed();
-  if (Object.keys(listsWanted).length !== 0) {
-    listsRecentsFirst = listsWanted.toReversed();
+  if (!matchingList) {
+    // Filtering lists to be displayed
+    let listsWanted = lists.filter(
+      (list) =>
+        list.name.toLowerCase() === inputName.toLowerCase() ||
+        list.date === inputDate
+    );
+
+    // Setting lists that will be displayed
+
+    if (Object.keys(listsWanted).length !== 0) {
+      listsRecentsFirst = listsWanted.toReversed();
+    }
   }
 
   return (
@@ -35,32 +45,47 @@ const ListCollection = ({ lists, title }) => {
           type="text"
           placeholder="Search"
           onChange={(e) => {
-            setBlogName(e.target.value);
+            setInputName(e.target.value);
           }}
           className="text-search"
         />
+
         <input
           type="date"
           className="date-search"
+          pattern="\d{4}-\d{2}-\d{2}"
           onChange={(e) => {
-            setBlogDate(dayjs(e.target.value).format('ll'));
+            setInputDate(dayjs(e.target.value).format('ll'));
           }}
         />
       </div>
 
-      {listsRecentsFirst.map((list) => (
-        <div className="list-preview" key={list.id}>
-          <Link to={'/lists/' + list.id}>
+      {(
+        <div className="list-preview" key={matchingList.id}>
+          <Link to={'/lists/' + matchingList.id}>
             <div className="title">
-              <h2>{list.name}</h2>
+              <h2>{matchingList.name}</h2>
             </div>
             <div className="list-info">
-              <p className="description">{list.description}</p>
-              <p className="date-created">Created {list.date}</p>
+              <p className="description">{matchingList.description}</p>
+              <p className="date-created">Created {matchingList.date}</p>
             </div>
           </Link>
         </div>
-      ))}
+      ) ||
+        listsRecentsFirst.map((list) => (
+          <div className="list-preview" key={list.id}>
+            <Link to={'/lists/' + list.id}>
+              <div className="title">
+                <h2>{list.name}</h2>
+              </div>
+              <div className="list-info">
+                <p className="description">{list.description}</p>
+                <p className="date-created">Created {list.date}</p>
+              </div>
+            </Link>
+          </div>
+        ))}
     </div>
   );
 };
