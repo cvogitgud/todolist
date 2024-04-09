@@ -35,6 +35,12 @@
       "name": "date search test",
       "description": "blah blah blah",
       "date": "Apr 8, 2024"
+    },
+    {
+      "id": "b429",
+      "name": "new date formatting test",
+      "description": "i'm using the native Date object instead of dayjs, which introduced a bunch of importing problems it seems, unnecessary really\n",
+      "date": "Apr 9, 2024"
     }
   ],
   "tasks": [
@@ -57,6 +63,11 @@
       "id": "ed46",
       "name": "new task",
       "list": "8b13"
+    },
+    {
+      "id": "4934",
+      "name": "hangboard",
+      "list": "eb47"
     }
   ]
 }

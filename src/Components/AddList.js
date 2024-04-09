@@ -5,17 +5,29 @@ const AddList = () => {
   const [name, setName] = useState(null);
   const [description, setDescription] = useState(null);
 
-  const dayjs = require('dayjs');
-  var localizedFormat = require('dayjs/plugin/localizedFormat');
-  dayjs.extend(localizedFormat);
+  // const dayjs = require('dayjs');
+  // var localizedFormat = require('dayjs/plugin/localizedFormat');
+  // dayjs.extend(localizedFormat);
 
-  const [date, setDate] = useState(dayjs().format('ll'));
+  // const [date, setDate] = useState(dayjs().format('ll'));
+
+  const options = {
+    month: 'short',
+    year: 'numeric',
+    day: 'numeric',
+  };
+
+  const initDate = new Date();
+  const formattedDate = new Intl.DateTimeFormat('en-US', options).format(
+    initDate
+  );
+
+  const [date, setDate] = useState(formattedDate);
 
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     const list = { name, description, date };
-    console.log(list);
 
     if (list !== null) {
       event.preventDefault();

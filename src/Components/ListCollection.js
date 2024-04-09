@@ -3,15 +3,9 @@ import { useState } from 'react';
 
 /* Component for Collection of Todo Objects */
 const ListCollection = ({ lists, title }) => {
-  const dayjs = require('dayjs');
-  var localizedFormat = require('dayjs/plugin/localizedFormat');
-  dayjs.extend(localizedFormat);
-
-  var customParseFormat = require('dayjs/plugin/customParseFormat');
-  dayjs.extend(customParseFormat);
-
   const [inputName, setInputName] = useState('');
   const [inputDate, setInputDate] = useState(null);
+
   let listsRecentsFirst = lists.toReversed(); // default: show all lists
 
   // Find an exactly matching list, if possible
@@ -21,15 +15,13 @@ const ListCollection = ({ lists, title }) => {
       list.date === inputDate
   );
 
+  // If no exact match exists, find lists of matching name/date
   if (!matchingList) {
-    // Filtering lists to be displayed
     let listsWanted = lists.filter(
       (list) =>
         list.name.toLowerCase() === inputName.toLowerCase() ||
         list.date === inputDate
     );
-
-    // Setting lists that will be displayed
 
     if (Object.keys(listsWanted).length !== 0) {
       listsRecentsFirst = listsWanted.toReversed();
@@ -55,7 +47,18 @@ const ListCollection = ({ lists, title }) => {
           className="date-search"
           pattern="\d{4}-\d{2}-\d{2}"
           onChange={(e) => {
-            setInputDate(dayjs(e.target.value).format('ll'));
+            const options = {
+              month: 'short',
+              year: 'numeric',
+              day: 'numeric',
+            };
+            const date = new Date(e.target.value + 'T00:00:00');
+            const formattedDate = new Intl.DateTimeFormat(
+              'en-US',
+              options
+            ).format(date);
+
+            setInputDate(formattedDate);
           }}
         />
       </div>
