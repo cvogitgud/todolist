@@ -25,17 +25,12 @@
   padding: 0 10px;
 }
 
-.navbar .home-icon {
-  filter: invert(40%) sepia(18%) saturate(1029%) hue-rotate(202deg)
-    brightness(103%) contrast(105%);
-
-  height: 25px;
-  vertical-align: bottom;
-}
-
 .navbar .links {
   margin-left: auto;
+  vertical-align: bottom;
+  height: 100%;
 }
+
 .navbar a {
   color: rgb(104, 104, 174);
   margin-right: 16px;
@@ -49,4 +44,12 @@
 
 .navbar a:visited {
   color: rgb(104, 104, 174);
+}
+
+.navbar .home-icon {
+  filter: invert(40%) sepia(18%) saturate(1029%) hue-rotate(202deg)
+    brightness(103%) contrast(105%);
+
+  height: 25px;
+  vertical-align: bottom;
 }
