@@ -3,7 +3,7 @@ import { useState } from 'react';
 import useFetch from './useFetch.js';
 import TaskCollection from './TaskCollection.js';
 
-const ListDetails = () => {
+const ListView = () => {
   /* Fetch specific todo list */
   const { id } = useParams();
   const {
@@ -51,10 +51,6 @@ const ListDetails = () => {
     }
   };
 
-  const showAdd = () => {
-    document.querySelector('.submit-task').classList.add('adding-task');
-  };
-
   return (
     <div className="list-details">
       {isPending && <div>Loading...</div>}
@@ -83,14 +79,27 @@ const ListDetails = () => {
               }}
               placeholder="Add a new task"
             />
-            <button className="add-task-button">Add task</button>
+            <button
+              id="submit-new-task"
+              className="add-task-button"
+              onClick={() => {
+                document
+                  .querySelector('.submit-task')
+                  .classList.remove('adding-task');
+              }}>
+              Add
+            </button>
           </form>
 
           {/* Buttons */}
           <div className="buttons">
             <button
               className="add-task-button"
-              onClick={showAdd}
+              onClick={() => {
+                document
+                  .querySelector('.submit-task')
+                  .classList.add('adding-task');
+              }}
               style={{ marginRight: 5 }}>
               Add a new task
             </button>
@@ -104,4 +113,4 @@ const ListDetails = () => {
   );
 };
 
-export default ListDetails;
+export default ListView;

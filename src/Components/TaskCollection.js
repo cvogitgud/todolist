@@ -18,7 +18,7 @@ const TaskCollection = ({ tasks, list }) => {
             onClick={() => {
               handleDelete(task.id);
             }}>
-            Delete task
+            Delete
           </button>
         </div>
       ))}

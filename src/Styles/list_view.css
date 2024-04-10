@@ -33,14 +33,16 @@
 }
 
 .submit-task {
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
   margin-bottom: 10px;
+  display: none;
 }
 
 .adding-task {
+  display: flex;
 }
 
 .buttons {
@@ -73,4 +75,8 @@
 
 .add-task-button:hover {
   opacity: 0.85;
+}
+
+#submit-new-task {
+  width: 53px;
 }
