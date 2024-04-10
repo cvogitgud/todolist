@@ -36,7 +36,7 @@ const AddList = () => {
         headers: { 'Content-type': 'application/job' },
         body: JSON.stringify(list),
       }).then(() => {
-        console.log('new list added');
+        //console.log('new list added');
         navigate('/');
       });
     }

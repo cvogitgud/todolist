@@ -41,6 +41,12 @@
       "name": "new date formatting test",
       "description": "i'm using the native Date object instead of dayjs, which introduced a bunch of importing problems it seems, unnecessary really\n",
       "date": "Apr 9, 2024"
+    },
+    {
+      "id": "b794",
+      "name": "test list for today",
+      "description": "du ma energy is coming back",
+      "date": "Apr 10, 2024"
     }
   ],
   "tasks": [

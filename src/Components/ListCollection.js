@@ -45,19 +45,20 @@ const ListCollection = ({ lists, title }) => {
         <input
           type="date"
           className="date-search"
-          pattern="\d{4}-\d{2}-\d{2}"
           onChange={(e) => {
-            const options = {
-              month: 'short',
-              year: 'numeric',
-              day: 'numeric',
-            };
-            const date = new Date(e.target.value + 'T00:00:00');
-            const formattedDate = new Intl.DateTimeFormat(
-              'en-US',
-              options
-            ).format(date);
+            let formattedDate = '';
+            if (e.target.value !== '') {
+              const options = {
+                month: 'short',
+                year: 'numeric',
+                day: 'numeric',
+              };
 
+              const date = new Date(e.target.value + 'T00:00:00');
+              formattedDate = new Intl.DateTimeFormat('en-US', options).format(
+                date
+              );
+            }
             setInputDate(formattedDate);
           }}
         />
