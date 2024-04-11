@@ -25,7 +25,7 @@ function App() {
       <Navbar />
       <div className="content">
         <Routes>
-          <Route exact path="/" element={<Home />}></Route>
+          <Route exact path="/todolist" element={<Home />}></Route>
           <Route exact path="/add_list" element={<AddList />}></Route>
           <Route exact path="/lists/:id" element={<ListView />}></Route>
           <Route exact path="*" element={<NotFound />}></Route>

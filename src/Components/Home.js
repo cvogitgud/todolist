@@ -2,12 +2,7 @@ import ListCollection from './ListCollection';
 import useFetch from './useFetch';
 
 const Home = () => {
-  const {
-    data: lists,
-    isPending,
-    error,
-  } = useFetch('http://localhost:8000/lists');
-  // test
+  const { data: lists, isPending, error } = useFetch('data/db.json');
 
   return (
     <div className="home">
