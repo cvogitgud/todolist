@@ -7,6 +7,7 @@ const Home = () => {
     isPending,
     error,
   } = useFetch('http://localhost:8000/lists');
+  // test
 
   return (
     <div className="home">
