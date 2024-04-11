@@ -6,6 +6,20 @@ import ListView from './ListView';
 import NotFound from './NotFound';
 
 function App() {
+  let fadeElemOnScroll = (elem) => {
+    let element = document.querySelector(elem);
+
+    if (window.scrollY >= 750) {
+      element.style.display = 'flex';
+    } else {
+      element.style.display = 'none';
+    }
+  };
+
+  document.addEventListener('scroll', () => {
+    fadeElemOnScroll('.back-top-div');
+  });
+
   return (
     <Router>
       <Navbar />
@@ -16,6 +30,11 @@ function App() {
           <Route exact path="/lists/:id" element={<ListView />}></Route>
           <Route exact path="*" element={<NotFound />}></Route>
         </Routes>
+        <div className="back-top-div">
+          <a href="" className="back-top-link">
+            Back to top
+          </a>
+        </div>
       </div>
     </Router>
   );
