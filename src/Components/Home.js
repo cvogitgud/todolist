@@ -7,15 +7,6 @@ const Home = () => {
     isPending,
     error,
   } = useFetch('http://localhost:8000/lists');
-  console.log(lists);
-
-  // const {
-  //   data: listsTemp,
-  //   isPendingTemp,
-  //   errorTemp,
-  // } = useFetch('data/db.json');
-
-  // console.log(isPendingTemp);
 
   return (
     <div className="home">
